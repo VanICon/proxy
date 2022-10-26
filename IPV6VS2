@@ -38,6 +38,9 @@ allow * 58.186.91.107
 deny *
 proxy
 
+auth strong
+
+
 users $(awk -F "/" 'BEGIN{ORS="";} {print $1 ":CL:" $2 " "}' ${WORKDATA})
 
 $(awk -F "/" '{print "auth strong\n" \
